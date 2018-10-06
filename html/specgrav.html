@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<style type="text/css">
+.form li { list-style-type: None }
+table { border-collapse: collapse; }
+table,th,td { border: 1px solid black; }
+th,td { padding: 5px; }
+input {
+    height: 50px;
+    width: 200px;
+    font-size: 50px; 
+}
+output {
+    height: 50px;
+    width: 200px;
+    font-size: 50px; 
+}
+label {
+    font-size: 50px; 
+}
+</style>
+
+
+<body>
+
+<form oninput="x.value=0.1*Math.round(10*(parseFloat(b.value) - parseFloat(c.value) * parseFloat(d.value) ) / (parseFloat(d.value) - 1) / parseFloat(b.value) * parseFloat(a.value) )
+">
+
+<p><label for="hours">Weight of glaze in bucket</label>
+</p>
+
+<input id="a">
+
+
+<p><label>Weight of syringeful of glaze</label>
+</p>
+
+<input id="b">
+
+<p><label for="hours">Weight of syringeful of water</label>
+</p>
+
+<input id="c" value="60">
+
+<p><label for="hours">Desired specific gravity</label>
+</p>
+
+<input id="d">
+
+<p><label for="hours">Weight of water to add:</label>
+</p>
+<output name="x" for="a b c d"></output>
+</form>
+
+
+
+<p><strong>Note:</strong> Any unit of weight can be used, as long as the same unit is used for all weights.</p>
+
+</body>
+</html>
