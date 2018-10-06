@@ -21,10 +21,17 @@ label {
 }
 </style>
 
+<script>
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+/*Taken from http://www.jacklmoore.com/notes/rounding-in-javascript*/
+</script>
+
 
 <body>
 
-<form oninput="x.value=0.1*Math.round(10*(parseFloat(b.value) - parseFloat(c.value) * parseFloat(d.value) ) / (parseFloat(d.value) - 1) / parseFloat(b.value) * parseFloat(a.value) )
+<form oninput="x.value=round((parseFloat(b.value) - parseFloat(c.value) * parseFloat(d.value) ) / (parseFloat(d.value) - 1) / parseFloat(b.value) * parseFloat(a.value), 1)
 ">
 
 <p><label for="hours">Weight of glaze in bucket</label>
