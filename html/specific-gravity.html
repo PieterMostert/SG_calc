@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>specific gravity for glaze</title>
+
+<style type="text/css">
+.form li { list-style-type: None }
+table { border-collapse: collapse; }
+table,th,td { border: 1px solid black; }
+th,td { padding: 5px; }
+</style>
+
+<script>
+/*---------------------------------------------------*/
+/* add water to the bucket to change specific gravity */
+/*---------------------------------------------------*/
+function add_water(bucket_glaze_weight,syringe_glaze_weight,syringe_water_weight,target_sg) {
+
+var current_sg = syringe_glaze_weight/syringe_water_weight
+var water_to_add = (syringe_glaze_weight - syringe_water_weight * target_sg) / (target_sg - 1) / syringe_glaze_weight * bucket_glaze_weight
+
+var sg_html = "<table><tr><th>water added to 100ml graduated cylinder(ml)</th>"
+sg_html += "<th>new specific gravity</th>"
+sg_html += "<th>bucket water to add(ml)</th>"
+sg_html += "</tr><tr>"
+}
+
+/*------------------------------------------------------------*/
+/* create a table of containing the amount of water to adjust */
+/* in a graduated cylinder, new specific gravity, and amount  */
+/* of water to adjust a bucket of glaze.                      */
+/*------------------------------------------------------------*/
+function create_sg_table() {
+
+var bucket_glaze_weight = parseFloat(document.forms["sg_for_glazes"]["bucket_glaze_weight"].value);
+var target_specific_gravity = parseFloat(document.forms["sg_for_glazes"]["target_specific_gravity"].value);
+var total_bucket_weight = parseFloat(document.forms["sg_for_glazes"]["total_bucket_weight"].value);
+var empty_bucket_weight = parseFloat(document.forms["sg_for_glazes"]["empty_bucket_weight"].value);
+
+sg_html = add_water(bucket_glaze_weight,syringe_glaze_weight,syringe_water_weight,target_sg) 
+ 
+document.querySelector('.results').innerHTML = sg_html
+window.scrollBy(0,100);
+}
+</script>
+
+</head>
+<body id="main_body" >
+  <div id="description">
+<h1>Specific Gravity for Glaze</h1>
+
+  </div>
+
+<hr>
+
+	<div id="form_container">
+		<form class="form" name="sg_for_glazes" id="form_29113" onsubmit="event.preventDefault(); create_sg_table();" >
+					<div class="form_description">
+					
+			<ul >
+			
+					<li id="li_1" >
+		<label class="description" for="element_1">Weight of glaze in bucket</label>
+		<div>
+			<input id="bucket_glaze_weight" name="bucket_glaze_weight" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Weight of syringeful of glaze</label>
+		<div>
+			<input id="syringe_glaze_weight" name="syringe_glaze_weight" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Weight of syringeful of water</label>
+		<div>
+			<input id="syringe_water_weight" name="syringe_water_weight" class="element text medium" type="text" maxlength="255" value="60"/> 
+		</div> 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">Desired specific gravity</label>
+		<div>
+			<input id="target_sg" name="target_sg" class="element text large" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="29113" />
+			<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</li>
+			</ul>
+		</form>	
+	</div>
+        <div id="results" class="results"></div>
+	</body>
+</html>
