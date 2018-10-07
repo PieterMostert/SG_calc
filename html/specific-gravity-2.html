@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>specific gravity for glaze 2</title>
 
 <style type="text/css">
-.form li { list-style-type: None }
-table { border-collapse: collapse; }
-table,th,td { border: 1px solid black; }
-th,td { padding: 5px; }
 input {
     height: 50px;
     width: 200px;
@@ -15,6 +15,7 @@ output {
     height: 50px;
     width: 200px;
     font-size: 50px; 
+    color: "red";
 }
 label {
     font-size: 50px; 
@@ -28,44 +29,40 @@ function round(value, decimals) {
 /*Taken from http://www.jacklmoore.com/notes/rounding-in-javascript*/
 </script>
 
-
 <body>
 
 <form oninput="x.value=round((parseFloat(d.value) / parseFloat(a.value) - parseFloat(e.value)) * (parseFloat(b.value) - parseFloat(a.value)) / (parseFloat(e.value) - 1) / (parseFloat(b.value) - parseFloat(d.value)) * parseFloat(c.value), 1)
 ">
 
-<p><label for="hours">Weight of syringeful of water</label>
+<p><label>Weight of syringeful of water:</label>
 </p>
 
 <input id="a", value="60">
 
-
-<p><label>Weight of syringeful of glaze</label>
+<p><label>Weight of syringeful of glaze:</label>
 </p>
 
 <input id="b">
 
-<p><label for="hours">Weight of water added to bucket</label>
+<p><label>Weight of water added to bucket:</label>
 </p>
 
 <input id="c">
 
-<p><label for="hours">Weight of syringeful of glaze after water added</label>
+<p><label>Weight of syringeful of glaze after water added:</label>
 </p>
 
 <input id="d">
 
-<p><label>Desired specific gravity</label>
+<p><label>Desired specific gravity:</label>
 </p>
 
 <input id="e">
 
 <p><label for="hours">Weight of additional water to add to bucket:</label>
 </p>
-<output name="x" for="a b c d e"></output>
+<output name="x" style="color:red" for="a b c d e"></output>
 </form>
-
-
 
 <p><strong>Note:</strong> This version can be used when it's impractical to measure the weight of the glaze in the bucket. Here, after weighing syringeful of glaze, you add a certain amount of water to the glaze (the amount is up to you; hopefully it won't decrease the specific gravity more than desired). Stir the glaze well, and then weigh a syringeful of glaze again. Enter the desired specific gravity, and the program will calculate how much more water you need to add to reach that specific gravity.</p>
 
