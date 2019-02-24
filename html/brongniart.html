@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>brongniart's formula</title>
+
+<style type="text/css">
+input {
+    type="number";
+    pattern="[0-9]*";
+    height: 50px;
+    width: 200px;
+    font-size: 40px; 
+}
+output {
+    height: 50px;
+    width: 200px;
+    font-size: 40px; 
+}
+label {
+    font-size: 20px; 
+}
+</style>
+
+<script>
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+/*Taken from http://www.jacklmoore.com/notes/rounding-in-javascript*/
+</script>
+
+
+<body>
+
+<form oninput="x.value=round((parseFloat(b.value) - parseFloat(c.value)) * parsefloat(d) / (parseFloat(b.value) * (parseFloat(d.value) - 1)), 1)
+">
+
+<p><label>Weight of glaze in bucket:</label>
+</p>
+
+<input id="a">
+
+
+<p><label>Weight of syringeful of glaze:</label>
+</p>
+
+<input id="b">
+
+<p><label>Weight of syringeful of water:</label>
+</p>
+
+<input id="c" value="20.3">
+
+<p><label>Specific gravity of dry materials:</label>
+</p>
+
+<input id="d" value="2.6">
+
+<p><label>Weight of dry materials:</label>
+</p>
+<output name="x" style="color:red" for="a b c d"></output>
+</form>
+
+
+
+<p><strong>Note:</strong> Any unit of weight can be used, as long as the same unit is used for all weights.</p>
+
+</body>
+</html>
