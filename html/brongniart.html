@@ -28,14 +28,14 @@ function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 /*Taken from http://www.jacklmoore.com/notes/rounding-in-javascript*/
+    /*round((parseFloat(b.value) - parseFloat(c.value)) * parsefloat(d.value) / (parseFloat(b.value) * (parseFloat(d.value) - 1)), 1)*/
 </script>
 
 
 <body>
 
-    /*round((parseFloat(b.value) - parseFloat(c.value)) * parsefloat(d) / (parseFloat(b.value) * (parseFloat(d.value) - 1)), 1)*/
-<form oninput="x.value=5
-">
+<form oninput="x.value=round((parseFloat(b.value) - parseFloat(c.value)) * parsefloat(d.value) / (parseFloat(b.value) * (parseFloat(d.value) - 1)), 1)
+               ">
 
 <p><label>Weight of glaze in bucket:</label>
 </p>
